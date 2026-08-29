@@ -25,8 +25,17 @@ return new class() extends Migration
             $table->unsignedInteger('level')->default(1);
             $table->unsignedInteger('health')->default(100);
             $table->unsignedInteger('max_health')->default(100);
+            $table->unsignedInteger('mana')->default(50);
+            $table->unsignedInteger('max_mana')->default(50);
+            $table->unsignedInteger('strength')->default(10);
+            $table->unsignedInteger('defense')->default(10);
+            $table->unsignedInteger('agility')->default(10);
+            $table->unsignedInteger('intelligence')->default(10);
+            $table->unsignedInteger('stat_points')->default(0);
             $table->unsignedInteger('available_skill_points')->default(0);
             $table->unsignedInteger('respec_count')->default(0);
+            $table->timestamp('last_battle_at')->nullable();
+            $table->timestamp('last_action_at')->nullable();
             $table->timestamps();
             $table->unique(['player_id', 'name']);
         });
